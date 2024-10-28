@@ -1,0 +1,1 @@
+This is a simple that handles Blog creation, Reading, Editing and Deleting. The blog created are not presistant meaning there is no database and are stored on the memory and will be removed once the server is restarted. Enjoy.
