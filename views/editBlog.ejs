@@ -1,0 +1,20 @@
+<%- include("partials/header.ejs") %>
+
+<div class="my-5 mx-5"> 
+    <h2>Edit Info</h2>
+    <form action="/info/<%= content.id %>?_method=PUT" method="post">
+        <div class="mt-5 mb-3">
+            <label for="title" class="form-label">Information Title:</label>
+            <input type="text" class="form-control" id="title" name="title" value="<%= content.title %>">
+        </div>
+        <div class="mt-5 mb-3">
+            <label for="info" class="form-label">Information Description:</label>
+            <textarea class="form-control" id="info" name="info" rows="3"><%= content.info %></textarea>
+        </div>
+        <div class="mt-5 mb-3 container">
+            <input id="create" type="submit" value="Edit" style="background-color: #7077A1;">
+        </div>
+    </form>
+</div> 
+
+<%- include("partials/footer.ejs") %>

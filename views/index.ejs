@@ -1,0 +1,43 @@
+<%- include("partials/header.ejs") %>
+
+<% if(locals.content.length > 0){ %>
+    <% for(let i = 0;i < content.length; i++){ %>
+        <div class="my-5">
+            <div class="p-5 text-center bg-body-tertiary">
+              <div class="container py-5">
+                <h3 class="text-body-emphasis">
+                    <%= content[i].title %>
+                </h3>
+              </div>
+              <div class="container pb-3">
+                <p class="col-lg-8 mx-auto lead">
+                    <%= content[i].info %>
+                </p>
+              </div>
+              <div class="d-inline-flex gap-2 mb-5">
+                <form method="get">
+                  <input class="mx-5" id="create" type="submit" value="Edit" formaction="/edit/<%= content[i].id %>" style="background-color: #7077A1;">
+                </form>
+                <form method="post">
+                  <input class="mx-5" id="create" type="submit" value="Delete" formaction="/delete/<%= content[i].id %>?_method=DELETE" style="background-color: #7077A1;">
+                </form>
+              </div>
+            </div>
+          </div>
+    <% } %>
+<% } else{ %>
+    <div class="p-5 text-center bg-body-tertiary">
+         <div class="container py-5">
+           <p class="col-lg-8 mx-auto lead">
+             You do not have an Information yet. <br> Go and create one.
+           </p>
+           <div class="mt-5 mb-3 container">
+            <form method="post">
+                <input id="create" type="submit" value="create" style="background-color: #7077A1;" formaction="/create">
+            </form>
+        </div>
+         </div>
+    </div>
+<% } %>
+
+<%- include("partials/footer.ejs") %>
